@@ -6,26 +6,9 @@
     <title>JS Bin</title>
 </head>
 <body>
-<div class="top">
-    <div class="top-wrap clearfloat">
-        <div class="left fl">
-            <span class="content">  返回</span>
 
-        </div>
 
-        <div class="title fl">
-            <span class="content"> 停车费缴纳</span>
-
-        </div>
-
-        <div class="right fl">
-            <span class="content"> 缴费记录</span>
-
-        </div>
-    </div>
-</div>
-
-<div class="tab-wrap">
+<div class="tab_wrap">
     <div class=" clearfloat">
         <div class="tab1 fl"><span class="content">当前账单</span></div>
         <div class="tab2 fl"><span>我的月卡</span></div>
@@ -34,7 +17,10 @@
 
 <div class="main">
     <div class="list_wrap">
-        <div class="list-1"></div>
+        <div class="list-1">
+          <span>停车费缴纳</span> <span>09/</span>
+          
+        </div>
     </div>
     <div class="list_wrap">
         <div class="list-2"></div>
@@ -74,8 +60,14 @@
 </body>
 </html>
 
+
 <style>
-    .clearfloat:after{
+    
+   *{
+        box-sizing:border-box;
+    }
+
+.clearfloat:after{
         display:block;
         clear:both;
         content:"";
@@ -84,56 +76,21 @@
         height:0}
     .clearfloat{zoom:1}
 
-    .fl{
+.fl{
         float:left;
-    }
+}
 
 .fr{
   float:right;
   
   
 }
-    .top{
-        width:100%;
-        background: #00BFA3;
-        position: relative;
+ 
 
-    }
+.tab_wrap{
+  width:100%;
+}
 
-    .top .top-wrap{
-        height:78px;
-        padding:44px 0;
-    }
-    .top .left{
-        text-align: center;
-        height:100%;
-        width:23%;
-        font-family: PingFangSC-Regular;
-        font-size: 42px;
-        color: #FFFFFF;
-        letter-spacing: -0.29px;
-    }
-
-    .top .right{
-        text-align: center;
-        height:100%;
-        width:23%;
-        font-family: PingFangSC-Regular;
-        font-size: 42px;
-        color: #FFFFFF;
-        letter-spacing: -0.29px;
-
-    }
-
-    .top .title{
-        height:100%;
-        width:54%;
-        font-family: PingFangSC-Medium;
-        font-size: 56px;
-        color: #FFFFFF;
-        letter-spacing: -0.2px;
-        text-align: center;
-    }
 
     .tab1{
         width:50%;
@@ -150,7 +107,7 @@
     }
 
     .tab2{
-        width:49.8%;
+        width:50%;
         height:100px;
         font-family: PingFangSC-Regular;
         font-size: 40px;
@@ -200,6 +157,7 @@
 
    .footer .img_wrap{
        margin-top:15px;
+     width:100%;
     }
 
 .footer  .img1{
@@ -213,7 +171,7 @@
     width:100px;
     height:100px;
     background: blue;
-   margin-left:42%;
+   margin-left:33%;
 }
 
 
@@ -286,7 +244,6 @@ letter-spacing: -0.28px;
 
 
 
-<style>
-
+</style>
 
 
