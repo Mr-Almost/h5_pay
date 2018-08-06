@@ -16,18 +16,28 @@
 </div>
 
 <div class="main">
-    <div class="list_wrap">
-        <div class="list-1">
-          <span>停车费缴纳</span> <span>09/</span>
+    <div class="list_wrap clearfloat ">
+             <div class=" fl">  <input type="radio" name="list_wrap_car" class="list_wrap_car" >
+          </div> 
+        <div class="list_car fl">
+            <div class="list_title ">
+          <span class="list_title_word">停车费缴纳</span>&nbsp;&nbsp;&nbsp;&nbsp; <span class="list_title_time">09/10&nbsp;&nbsp;&nbsp;&nbsp;16:00</span>
+          </div>
+              <br>    
+          <div class="list_content clearfloat">
+            <span  class="list_content_word">我家的车</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span  class="list_content_licence">粤B.1W836</span>
+            <div  class="list_content_money fr">￥23.5</div>
+            <div class="list_content_time">09/10&nbsp;&nbsp;12:00&nbsp;至&nbsp;09/10&nbsp;&nbsp;16:00</div>
+          </div>
           
         </div>
     </div>
     <div class="list_wrap">
         <div class="list-2"></div>
     </div>
-    <div class="list_wrap">
-        <div class="list-3"> </div>
-    </div>
+
 
 </div>
 
@@ -59,7 +69,6 @@
   
 </body>
 </html>
-
 
 <style>
     
@@ -241,9 +250,73 @@ letter-spacing: -0.28px;
 }
 
 
+.list_car{
+    margin-left:80px;
+}
 
+.list_title_word{
+font-family: PingFangSC-Regular;
+font-size: 42px;
+color: #808080;
+letter-spacing: 0;
+}
+
+.list_title_time{
+  font-family: PingFangSC-Regular;
+font-size: 36px;
+color: #808080;
+letter-spacing: 0;
+}
+
+
+
+.list_wrap_car{
+   transform: scale(4,4);
+  border: 3px solid #B6B6B6;
+  position:absolute;
+  top:250px;
+  left:50px;
+}
+
+.list_content{}
+
+.list_content_word{
+  font-family: PingFangSC-Regular;
+font-size: 42px;
+color: #505050;
+letter-spacing: 0;
+
+}
+.list_content_licence
+{
+  
+  font-family: PingFangSC-Regular;
+font-size: 36px;
+color: #808080;
+letter-spacing: 0;
+  
+}
+
+.list_content_time{
+font-family: PingFangSC-Regular;
+font-size: 36px;
+color: #808080;
+letter-spacing: 0;
+}
+
+
+.list_content_money{
+font-family: PingFangSC-Regular;
+font-size: 42px;
+color: #505050;
+letter-spacing: 0;
+text-align: right;
+  width:400px;
+  padding-right:10px;
+}
 
 
 </style>
+
 
 
