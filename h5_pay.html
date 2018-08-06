@@ -92,8 +92,8 @@
 
         <div class="title ">支付方式</div>
         <div class="img_wrap clearfloat">
-            <div class="img1 fl"><img src="./online_wechat.png" alt="" style="width:100px;height:100px"></div>
-            <div class="img2 fl"><img src="./online_alipay.png" alt="" style="width:100px;height:100px"></div>
+            <div class="img_wechat fl"><img  src="./online_wechat.png" alt="" style="width:100px;height:100px;"><div  class="wechat_word" style="">微信支付</div></div>
+            <div class="img_alipay fl"><img  src="./online_alipay.png" alt="" style="width:100px;height:100px;"><div class="alipay_word" style="">支付宝支付</div></div>
         </div>
     </div>
 
@@ -218,18 +218,31 @@
         width:100%;
     }
 
-    .footer  .img1{
-        width:100px;
-        height:100px;
+    .footer  .img_wechat{
+        position:relative;
         margin-left:24%;
     }
-
-    .footer  .img2{
-        width:100px;
-        height:100px;
+    .footer .img_wechat .wechat_word{
+        position:absolute;
+        left:-20px;
+        font-family: PingFangSC-Regular;
+        font-size: 36px;
+        color: #808080;
+        letter-spacing: 0;width:200px;
+    }
+    .footer  .img_alipay{
+        position:relative;
         margin-left:33%;
     }
-
+    .footer .img_alipay .alipay_word{
+        position:absolute;
+        left:-35px;
+        font-family: PingFangSC-Regular;
+        font-size: 36px;
+        color: #808080;
+        letter-spacing: 0;
+        width:200px;
+    }
 
     .pay{
         background: #F7F7F7;
