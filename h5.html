@@ -116,7 +116,10 @@
     </div>
 
 
-
+    <div class="month_wrap_none">
+        <img class="month_wrap_none_img" src="./online_month_card_pic.png" alt="" width="430px" height="220px">
+        <div class="month_wrap_none_word">暂无月卡，请先购买</div>
+    </div>
 
 
 
@@ -566,8 +569,12 @@
 <script>
     $('.list_wrap').css({"display":"block"})
     $('.month_wrap').css({"display":"none"})
+    $('.month_wrap_none').css({"display":"none"})
     $('.pay_list_footer').css({"display":"block"})
     $('.pay_month_footer').css({"display":"none"})
+    $('#month_true').css({"display":"none"})
+    $('#month_false').css({"display":"none"})
+
 
     $('.tab1').click(function(){
         $('.tab1').addClass('tab_active')
@@ -576,6 +583,8 @@
         $('.month_wrap').css({"display":"none"})
         $('.pay_list_footer').css({"display":"block"})
         $('.pay_month_footer').css({"display":"none"})
+        $('#month_true').css({"display":"none"})
+        $('#month_false').css({"display":"none"})
 
     })
     $('.tab2').click(function(){
@@ -585,46 +594,19 @@
         $('.list_wrap').css({"display":"none"})
         $('.pay_month_footer').css({"display":"block"})
         $('.pay_list_footer').css({"display":"none"})
+        $('#month_true').css({"display":"block"})
+        $('#month_false').css({"display":"block"})
+
     })
 
     $('#month_true').click(function(){
-        $('.main').html(`
- <div class="month_wrap">
-    <img src="./online_month_card_bj.png" alt="" width="900px" height="540px">
-    <div class="month_title">月卡</div>
-    <div class="month_village">南昌智汇小区</div>
-    <div class="month_park">1号停车位</div>
-    <div class="month_pay">
-        <span class="month_pay_money">￥450</span>
-        <span class="month_pay_time">有效期至2018-11-01</span>
-        <span class="month_pay_continue">去续费</span>
-    </div>
-</div>
-
-    <div class="month_wrap">
-        <img src="./online_month_card_bj.png" alt="" width="900px" height="540px">
-        <img class="limit_png" src="./online_card_expire.png" alt="" width="218px" height="90px">
-        <div class="month_title">月卡</div>
-        <div class="month_village">南昌智汇小区</div>
-        <div class="month_park">2号停车位</div>
-        <div class="month_pay">
-            <span class="month_pay_money">￥450</span>
-            <span class="month_pay_time limit">有效期至2018-11-01</span>
-            <span class="month_pay_continue">去续费</span>
-        </div>
-    </div>
-
-        `)
+        $('.month_wrap_none').css({"display":"none"})
+        $('.month_wrap').css({"display":"block"})
     })
     $('#month_false').click(function(){
-        console.log('11111')
-        $('.main').html(`
-            <div class="month_wrap_none">
-        <img class="month_wrap_none_img" src="./online_month_card_pic.png" alt="" width="430px" height="220px">
-        <div class="month_wrap_none_word">暂无月卡，请先购买</div>
-    </div>
+        $('.month_wrap_none').css({"display":"block"})
+        $('.month_wrap').css({"display":"none"})
 
-        `)
     })
 
 </script>
