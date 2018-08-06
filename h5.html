@@ -4,17 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=1080,  user-scalable=no" />
     <title>JS Bin</title>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 
 
 <div class="tab_wrap">
     <div class=" clearfloat">
-        <div class="tab1 fl ">当前账单</div>
-        <div class="tab2 fl tab_active "><span>我的月卡</span></div>
+        <div class="tab1 fl tab_active">当前账单</div>
+        <div class="tab2 fl  "><span>我的月卡</span></div>
     </div>
 </div>
-
+<div style="position:absolute;z-index:99">
+<button id="month_true" style="width:200px;height:100px; font-size: 20px;margin-left:800px;">有月卡</button>
+<button id="month_false" style="width:200px;height:100px; font-size: 20px;margin-left:800px;">无月卡</button>
+</div>
 <div class="main">
     <div class="list_wrap clearfloat ">
 
@@ -84,19 +88,50 @@
         </div>
     </div>
 
+<div class="month_wrap">
+
+    <img src="./online_month_card_bj.png" alt="" width="900px" height="540px">
+
+    <div class="month_title">月卡</div>
+    <div class="month_village">南昌智汇小区</div>
+    <div class="month_park">1号停车位</div>
+    <div class="month_pay">
+        <span class="month_pay_money">￥450</span>
+        <span class="month_pay_time">有效期至2018-11-01</span>
+        <span class="month_pay_continue">去续费</span>
+    </div>
+</div>
+
+    <div class="month_wrap">
+        <img src="./online_month_card_bj.png" alt="" width="900px" height="540px">
+        <img class="limit_png" src="./online_card_expire.png" alt="" width="218px" height="90px">
+        <div class="month_title">月卡</div>
+        <div class="month_village">南昌智汇小区</div>
+        <div class="month_park">2号停车位</div>
+        <div class="month_pay">
+            <span class="month_pay_money">￥450</span>
+            <span class="month_pay_time limit">有效期至2018-11-01</span>
+            <span class="month_pay_continue">去续费</span>
+        </div>
+    </div>
+
+
+
+
+
+
 
 </div>
 
 <div class="footer_wrap">
+    <div class="pay_list_footer">
     <div class="footer">
-
         <div class="title ">支付方式</div>
         <div class="img_wrap clearfloat">
             <div class="img_wechat fl"><img  src="./online_wechat.png" alt="" style="width:100px;height:100px;"><div  class="wechat_word" style="">微信支付</div></div>
             <div class="img_alipay fl"><img  src="./online_alipay.png" alt="" style="width:100px;height:100px;"><div class="alipay_word" style="">支付宝支付</div></div>
         </div>
     </div>
-
 
 
     <div class="pay clearfloat">
@@ -108,6 +143,23 @@
         </div>
         <div class="pay_now fl"><span>立即支付</span></div>
     </div>
+
+    </div>
+
+    <div class="pay_month_footer">
+    <div class="pay clearfloat">
+        <div class="month_card fl clearfloat">
+            <div class="month_card_wrap fl">
+
+              <span class="month_card_buy">购买新月卡 </span>
+                <span class="month_card_buytime">30天起 </span>
+            </div>
+            <div class="month_card_total_wrap fr">￥450起</div>
+        </div>
+        <div class="pay_now fl"><span>立即支付</span></div>
+    </div>
+    </div>
+
 
 </div>
 
@@ -256,6 +308,7 @@
         width:100%;
     }
 
+    .month_card,
     .pay_info{
         width:65%;
         margin:52px 0;
@@ -298,10 +351,12 @@
         letter-spacing: -0.28px;
     }
 
+    .month_card_total_wrap,
     .total_wrap{
         padding-right:20px;
     }
 
+    .month_card_wrap,
     .pay_info_wrap{
         position:relative;
         padding-left:38px;
@@ -398,6 +453,178 @@
     top:10px;
     left:10px;
     }
+
+.month_wrap_none,
+    .month_wrap{
+        text-align: center;
+        position:relative;
+    }
+    .month_title{
+        position:absolute;
+        left:140px;
+        top:40px;
+        font-family: PingFangSC-Medium;
+        font-size: 42px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+    }
+    .month_village{
+        position:absolute;
+        left:140px;
+        top:250px;
+        font-family: PingFangSC-Medium;
+        font-size: 32px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+
+    }
+    .month_park{
+        position:absolute;
+        left:140px;
+        top:300px;
+        font-family: PingFangSC-Medium;
+        font-size: 60px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+    }
+    .month_pay{
+        position:absolute;
+        left:135px;
+        bottom:45px;
+    }
+    .month_pay_money{
+        font-family: PingFangSC-Medium;
+        font-size: 42px;
+        color: #808080;
+        letter-spacing: 0;
+    }
+    .month_pay_time{
+        font-family: PingFangSC-Medium;
+        font-size: 30px;
+        color: #808080;
+        letter-spacing: 0;
+        margin-left:20px;
+    }
+    .month_pay_continue{
+        margin-left:230px;
+        font-family: PingFangSC-Medium;
+        font-size: 42px;
+        color: #00BFA3;
+        letter-spacing: 0;
+        text-align: right;
+    }
+    .month_wrap .limit{
+        font-family: PingFangSC-Medium;
+        font-size: 30px;
+        color: #DC532A;
+        letter-spacing: 0;
+    }
+    .month_wrap .limit_png{
+        position:absolute;
+        right:96px;
+        top:40px;
+    }
+
+    .month_card_buy{
+        font-family: PingFangSC-Regular;
+        font-size: 42px;
+        color: #505050;
+        letter-spacing: -0.26px;
+    }
+    .month_card_buytime{
+        font-family: PingFangSC-Regular;
+        font-size: 36px;
+        color: #808080;
+        letter-spacing: -0.22px;
+        margin-left:20px;
+    }
+    .month_card_total_wrap{
+        font-family: PingFangSC-Regular;
+        font-size: 46px;
+        color: #00BFA3;
+        letter-spacing: -0.28px;
+        text-align: right;
+    }
+
+    .month_wrap_none_img{
+        margin-top:176px;
+        position:relative;
+    }
+    .month_wrap_none_word{
+        font-family: PingFangSC-Regular;
+        font-size: 36px;
+        color: #888888;
+        letter-spacing: 0;
+        text-align: right;
+        position:absolute;
+        top:450px;
+        left:360px;
+    }
 </style>
 
 
+<script>
+    $('.list_wrap').css({"display":"block"})
+    $('.month_wrap').css({"display":"none"})
+    $('.pay_list_footer').css({"display":"block"})
+    $('.pay_month_footer').css({"display":"none"})
+
+    $('.tab1').click(function(){
+        $('.tab1').addClass('tab_active')
+        $('.tab2').removeClass('tab_active')
+        $('.list_wrap').css({"display":"block"})
+        $('.month_wrap').css({"display":"none"})
+        $('.pay_list_footer').css({"display":"block"})
+        $('.pay_month_footer').css({"display":"none"})
+
+    })
+    $('.tab2').click(function(){
+        $('.tab2').addClass('tab_active')
+        $('.tab1').removeClass('tab_active')
+        $('.month_wrap').css({"display":"block"})
+        $('.list_wrap').css({"display":"none"})
+        $('.pay_month_footer').css({"display":"block"})
+        $('.pay_list_footer').css({"display":"none"})
+    })
+
+    $('#month_true').click(function(){
+        $('.main').html(`
+ <div class="month_wrap">
+    <img src="./online_month_card_bj.png" alt="" width="900px" height="540px">
+    <div class="month_title">月卡</div>
+    <div class="month_village">南昌智汇小区</div>
+    <div class="month_park">1号停车位</div>
+    <div class="month_pay">
+        <span class="month_pay_money">￥450</span>
+        <span class="month_pay_time">有效期至2018-11-01</span>
+        <span class="month_pay_continue">去续费</span>
+    </div>
+</div>
+
+    <div class="month_wrap">
+        <img src="./online_month_card_bj.png" alt="" width="900px" height="540px">
+        <img class="limit_png" src="./online_card_expire.png" alt="" width="218px" height="90px">
+        <div class="month_title">月卡</div>
+        <div class="month_village">南昌智汇小区</div>
+        <div class="month_park">2号停车位</div>
+        <div class="month_pay">
+            <span class="month_pay_money">￥450</span>
+            <span class="month_pay_time limit">有效期至2018-11-01</span>
+            <span class="month_pay_continue">去续费</span>
+        </div>
+    </div>
+
+        `)
+    })
+    $('#month_false').click(function(){
+        console.log('11111')
+        $('.main').html(`
+            <div class="month_wrap_none">
+        <img class="month_wrap_none_img" src="./online_month_card_pic.png" alt="" width="430px" height="220px">
+        <div class="month_wrap_none_word">暂无月卡，请先购买</div>
+    </div>
+
+        `)
+    })
+
+</script>
