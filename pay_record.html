@@ -345,7 +345,7 @@ text-align: center;
  document.getElementsByTagName('html')[0].style.minHeight=mobileHeight;
  
  
-var height=window.screen.availHeight;
+var height=$(window).height()
 $('.main').css({"height":height})
 
 
