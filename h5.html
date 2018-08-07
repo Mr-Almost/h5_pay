@@ -305,7 +305,7 @@ left: 0;
     }
 
     .main{
-      min-height:1200px;
+      min-height:400px;
      overflow-x:hidden; 
       overflow-y:auto;  
     }
@@ -745,6 +745,12 @@ left: 0;
 
 
 <script>
+ 
+var height=$(window).height()
+height=height*0.6
+$('.main').css({"height":height})
+
+
     $('.list_wrap').css({"display":"block"})
     $('.month_wrap').css({"display":"none"})
     $('.month_wrap_none').css({"display":"none"})
