@@ -9,7 +9,22 @@
 <body>
 
 
-<div class="tab_wrap">
+<div class="top">
+    <div class="top-wrap clearfloat">
+        <div class="left fl">
+           返回
+        </div>
+        <div class="title fl">
+             停车费缴纳
+        </div>
+        <div class="right fl">
+           缴费记录
+        </div>
+    </div>
+</div>
+
+
+<div class="tab_wrap ">
     <div class=" clearfloat">
         <div class="tab1 fl tab_active">当前账单</div>
         <div class="tab2 fl  "><span>我的月卡</span></div>
@@ -199,8 +214,56 @@
     }
 
 
+    .top{
+        width:1080px;
+        height:200px;
+        background: #00BFA3;
+        position: relative;
+    }
+    .top .top-wrap{
+
+        padding:44px 0;
+        display:flex;
+        align-items:Center;
+        justify-content:center;
+    }
+    .top .left{
+        display:flex;
+        align-items:Center;
+        justify-content:center;
+        width: 252px;
+        font-family: PingFangSC-Regular;
+        font-size: 42px;
+        color: #FFFFFF;
+        letter-spacing: -0.29px;
+    }
+    .top .right{
+        display:flex;
+        align-items:Center;
+        justify-content:center;
+        width: 252px;
+        font-family: PingFangSC-Regular;
+        font-size: 42px;
+        color: #FFFFFF;
+        letter-spacing: -0.29px;
+    }
+    .top .title{
+        display:flex;
+        align-items:Center;
+        justify-content:center;
+        width:576px;
+        font-family: PingFangSC-Medium;
+        font-size: 56px;
+        color: #FFFFFF;
+        letter-spacing: -0.2px;
+
+    }
+
+
+
     .tab_wrap{
         width:100%;
+        position:relative;
     }
 
 
@@ -211,7 +274,9 @@
         font-size: 40px;
         color: #505050;
         letter-spacing: 0;
-        text-align: center;
+        display:flex;
+        align-items:Center;
+        justify-content:center;
         background: #F6F6F6;
         box-shadow: 0 2px 0 0 #B4B4B4;
         border-right:2px solid #DCDCDC;
@@ -225,7 +290,9 @@
         font-size: 40px;
         color: #505050;
         letter-spacing: 0;
-        text-align: center;
+        display:flex;
+        align-items:Center;
+        justify-content:center;
         background: #F6F6F6;
         box-shadow: 0 2px 0 0 #B4B4B4;
     }
@@ -612,5 +679,11 @@
 
     $('.month_pay_continue').click(function(){
         window.location.href='http://mr-almost.site/h5_pay/continue.html';
+    })
+    $('.month_pay_continue').click(function(){
+        window.location.href='http://mr-almost.site/h5_pay/continue.html';
+    })
+    $('.top .right').click(function(){
+        window.location.href='http://mr-almost.site/h5_pay/pay_record.html';
     })
 </script>
