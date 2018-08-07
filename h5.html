@@ -46,7 +46,8 @@
             </div>
             <br>
             <div class="list_content clearfloat">
-                <div class=" fl">  <input type="radio" name="list_car_radio" class="list_car_radio" ></div>
+			  <div class=" fl">  <input type="checkbox" name="list_car_radio" id="list_car_radio" class="list_car_radio" ><label for="list_car_radio"><img src="./online_chose_light.png" width="" height="" onclick="checkbox(this)" class="list_car_new_radio" /></label></div>
+          
                 <div class="fl">
                     <span  class="list_content_word">我家的车</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -56,7 +57,7 @@
                 <div class="list_content_time">09/10&nbsp;&nbsp;12:00&nbsp;至&nbsp;09/10&nbsp;&nbsp;16:00</div>
             </div>
             <div class="list_content clearfloat">
-                <div class=" fl ">  <input type="radio" name="list_car_radio" class="list_car_radio" ></div>
+         <div class=" fl">  <input type="checkbox" name="list_car_radio" id="list_car_radio" class="list_car_radio" ><label for="list_car_radio"><img src="./online_chose_light.png" width="" height="" onclick="checkbox(this)" class="list_car_new_radio" /></label></div>
                 <div class="fl ">
                     <span  class="list_content_word">我家的车</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -80,7 +81,8 @@
             </div>
             <br>
             <div class="list_content clearfloat">
-                <div class=" fl">  <input type="radio" name="list_visitor_radio" class="list_visitor_radio" ></div>
+			  <div class=" fl">  <input type="checkbox" name="list_visitor_radio" id="list_visitor_radio" class="list_visitor_radio" ><label for="list_visitor_radio"><img src="./online_chose_light.png" width="" height="" onclick="checkbox(this)" class="list_visitor_new_radio" /></label></div>
+       
                 <div class="fl">
                     <span  class="list_content_word">访客： <span  class="list_content_name">刘总</span></span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -91,7 +93,7 @@
             </div>
 
             <div class="list_content clearfloat">
-                <div class=" fl">  <input type="radio" name="list_visitor_radio" class="list_visitor_radio" ></div>
+                 <div class=" fl">  <input type="checkbox" name="list_visitor_radio" id="list_visitor_radio" class="list_visitor_radio" ><label for="list_visitor_radio"><img src="./online_chose_light.png" width="" height="" onclick="checkbox(this)" class="list_visitor_new_radio" /></label></div>
                 <div class="fl">
                     <span  class="list_content_word">访客： <span  class="list_content_name">刘总</span></span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
@@ -156,7 +158,7 @@
     <div class="pay clearfloat">
         <div class="pay_info fl clearfloat">
             <div class="pay_info_wrap fl">
-                <input type="radio" name="pay_choice" class="pay_choice_radio"><label class="pay_choice">全选</label>
+                	<input type="radio" name="pay_choice" class="pay_choice_radio" id="pay_choice" ><label for="pay_choice"><img src="./online_chose_light.png" width="" height="" onclick="checkbox(this)" class="pay_choice_new_radio"/><span class="pay_choice">全选</span></label>
             </div>
             <div class="total_wrap fr"><span class="total ">合计:&nbsp; &nbsp;<span>￥0</span></span></div>
         </div>
@@ -217,7 +219,7 @@
 
     .top{
         width:1080px;
-   
+
         background: #00BFA3;
         position: relative;
     }
@@ -390,7 +392,7 @@
         font-size: 42px;
         color: #505050;
         letter-spacing: -0.26px;
-        margin-left:40px;
+        margin-left:50px;
     }
 
     .pay_now{
@@ -439,13 +441,20 @@
         border: 3px solid #B6B6B6;
         position:absolute;
         top:20px;
-
+        visibility: hidden;
     }
+	.pay_choice_new_radio{
+
+	position:absolute;
+	top:0px;
+	left:20px;
+	}
+	
 
     .list_visitor,
     .list_car{
         margin-left:90px;
-
+        width:inherit;
     }
 
     .list_title_word{
@@ -465,18 +474,23 @@
 
     .list_visitor_radio,
     .list_car_radio{
-        transform: scale(4,4);
-        border: 3px solid #B6B6B6;
         position:absolute;
-        top:50px;
+        top:23px;
         left:-50px;
-
+ visibility: hidden;
     }
+	
+ .list_visitor_new_radio,	
+.list_car_new_radio{
+      position:absolute;
+        top:0px;
+        left:-70px;
+		}
 
     .list_content{
         margin-bottom:50px;
         position:relative;
-        width:100%;
+        width:inherit;
     }
 
     .list_content_person,
@@ -511,11 +525,12 @@
         color: #505050;
         letter-spacing: 0;
         text-align: right;
-        margin-left:200px;
+        margin-right:100px;
         padding-right:10px;
     }
     .list_title{
         margin-top:18px;
+        margin-bottom:50px;
     }
     .park_fee_png{
     width:72px;
@@ -677,12 +692,11 @@
 
     })
 
-
-	$('.top-wrap .left').click(function(){
+ 	$('.top-wrap .left').click(function(){
         window.location.href='http://mr-almost.site/h5_pay/index.html';
     })
 	
-	
+ 
     $('.month_pay_continue').click(function(){
         window.location.href='http://mr-almost.site/h5_pay/continue.html';
     })
@@ -693,3 +707,21 @@
         window.location.href='http://mr-almost.site/h5_pay/pay_record.html';
     })
 </script>
+
+ <script>
+   var result = true;
+   function checkbox(e) {
+     if (result==true)
+   {
+console.log(e)
+    e.src = "./online_chose_dark.png";
+ result=false;
+   }
+   else if(result==false)
+   {
+  e.src = "./online_chose_light.png"
+   result=true;
+   }
+   }
+
+ </script>
