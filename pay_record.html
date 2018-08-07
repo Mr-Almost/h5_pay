@@ -217,6 +217,11 @@ left: 0;
 }
  
 
+    .main{
+      height:200%;
+     overflow-x:hidden; 
+      overflow-y:auto;  
+    }
 
  .clearfloat:after{
         display:block;
@@ -336,6 +341,14 @@ text-align: center;
 
 
 <script>
+ var mobileHeight=window.innerHeight+"px";
+ document.getElementsByTagName('html')[0].style.minHeight=mobileHeight;
+ 
+ 
+var height=window.screen.availHeight;
+$(.main).css({"height":height})
+
+
 	$('.top-wrap .left').click(function(){
 	  window.location.href='http://mr-almost.site/h5_pay/h5.html';
 	})
