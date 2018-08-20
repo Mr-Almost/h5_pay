@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+  <span>车牌号：</span>
+  <div>
+<select name="car_place" id="car_place">
+   <option value ="101">粤</option>
+  <option value ="102">湘</option>
+  <option value="103">1</option>
+  <option value="104">2</option>
+</select>
+  <input type="text" name="car_licence" id="car_licence">
+    </div>
+  
+  
+
+<input class="selectCarBtn" readonly="readonly" type="text" placeholder="输入车牌号">
+<div class="popup OpacityUp popup-selectCarBox">
+    <div class="btn">
+        <div class="selectCarTit">
+            <div class="closeSelectCarBox">取消</div>
+        </div>
+        <div class="selectCarCon">
+            <ul class="number">
+                <li>Q</li>
+                <li>W</li>
+                <li>E</li>
+                <li>R</li>
+                <li>T</li>
+                <li>Y</li>
+                <li>U</li>
+                <li>I</li>
+              
+                <li>O</li>
+                <li>P</li>
+                <li>A</li>
+                <li>S</li>
+                <li>D</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+            
+                    
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+                <li>Z</li>
+                <li>X</li>
+                <li>C</li>
+                <li>V</li>
+                <li>B</li>
+              
+              
+            </ul>
+            <ul class="english">
+                <li>N</li>
+                <li>M</li>
+                <li>港</li>
+                <li>澳</li>
+                <li>警</li>
+                <li>领</li>
+                <li>使</li>
+                <li>学</li>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>.</li>
+         
+                <li class="key_ok">确定</li>
+                <li class="delect_back">X</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+<style>
+#car_place{
+  width:300px;
+  height:120px;
+  border: 2px solid #B4B4B4;
+  border-radius: 5px;
+  font-family: PingFangSC-Regular;
+font-size: 50px;
+color: #505050;
+letter-spacing: 0;
+text-align: justify;
+}
+
+#car_licence{
+border: 2px solid #B4B4B4;
+border-radius: 5px;
+   width:640px;
+  height:120px;
+    font-family: PingFangSC-Regular;
+font-size: 50px;
+color: #505050;
+letter-spacing: 0;
+text-align: justify;
+}
+
+
+
+
+.selectCarCon li{
+  list-style: none;
+  background: #FFFFFF;
+  border: 4px solid #E2E2E2;
+  border-radius: 14px;
+  width:120px;
+  height:120px;
+  font-family: PingFangSC-Regular;
+font-size: 42px;
+color: #505050;
+letter-spacing: 0;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+</style>
+
+
+<script>
+// 自定义键盘事件
+$(".selectCarBtn").click(function(){
+    $.popup(".popup-selectCarBox");
+});
+$(".closeSelectCarBox").click(function(){
+    $.closeModal(".popup-selectCarBox");
+});
+$(".popup-selectCarBox").click(function(e){
+    $.closeModal(".popup-selectCarBox");
+})
+$(".selectCarCon").click(function(e){
+    e.stopPropagation();
+})
+var carNum = "";
+$(".selectCarCon li").not('.delect_back,.key_ok').click(function(){
+    carNum = carNum + $(this).html();
+    $(".selectCarBtn").val(carNum);
+});
+$(".selectCarCon li.delect_back").click(function(){
+    var num = carNum.substr(0, carNum.length - 1);
+    $(".selectCarBtn").val(num);
+    carNum = num;
+});
+$(".selectCarCon li.key_ok").click(function(){
+    $.closeModal(".popup-selectCarBox");
+});
+</script>
